@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO-APP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <!-- AUTH SECTION -->
+    <div id="auth-section">
+
+        <h2>Signup</h2>
+        <input id="signup-username" type="text" placeholder="Enter username">
+        <input id="signup-email" type="text" placeholder="Enter email">
+        <input id="signup-pwd" type="password" placeholder="Enter password">
+        <button onclick="signUp()">signup</button>
+
+        <h2>Signin</h2>
+        <input id="login-email" type="text" placeholder="Enter email">
+        <input id="login-pwd" type="password" placeholder="Enter password">
+        <button onclick="login()">signin</button>
+        
+
+    </div>
+
+    <!-- TO-DO SECTION -->
+    <div id="todoSection" style="display: none;">
+
+        <h2>My Todos</h2>
+
+        <input type="text"  id="todoInput" placeholder="Enter todo">
+        <button onclick="addToDo()">Add Todo</button>
+
+        <button onclick="logout()">Logout</button>
+
+        <ul id="todoList"></ul>
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
