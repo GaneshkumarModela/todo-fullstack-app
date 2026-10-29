@@ -191,12 +191,14 @@ app.put("/updateToDo",authenticateToken, async (req, res)=>{
 
 //Make sure DB connection is established before you start your http server and testing API's  
 async function startServer(){
+    
+    const PORT = process.env.PORT || 3000;
 
     try{
 
         await mongoose.connect(process.env.MONGO_URI);
         console.log("-----DB Connection is established-----");
-        app.listen(3000,()=>console.log("-----App server Started-----"));
+        app.listen(PORT,()=>console.log(`App server Started on ${PORT}`));
 
     }catch(error){
         console.error("Failed to Connect to Mongo DB:", error.message);
