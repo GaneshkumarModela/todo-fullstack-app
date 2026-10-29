@@ -10,7 +10,7 @@ async function signUp(){
 
     try{
         const response = await axios.post(
-            "http://localhost:3000/signup",
+            "https://todo-backend-vxez.onrender.com/signup",
             {
                 name : username,
                 email : email,
@@ -56,7 +56,7 @@ async function login(){
         document.getElementById("login-pwd").value = "";
 
         const response = await axios.post(
-            "http://localhost:3000/login",
+            "https://todo-backend-vxez.onrender.com/login",
             {email,pwd}
         );
 
@@ -151,7 +151,7 @@ async function getToDos(){
 
     //response will be an array of todo objects
     const response = await axios.get(
-        "http://localhost:3000/todos",
+        "https://todo-backend-vxez.onrender.com/todos",
         {headers:{token:localStorage.getItem("token")}}
     )
     //once it get response(userToDos) from backend->DB
@@ -171,7 +171,7 @@ async function addToDo(){
     document.getElementById("todoInput").value = "";
 
     await axios.post(
-        "http://localhost:3000/addToDo",
+        "https://todo-backend-vxez.onrender.com/addToDo",
         {task:toDo},
         {headers:{token:localStorage.getItem("token")}}
     )
@@ -184,7 +184,7 @@ async function updateToDo(task, id){
     const newTask = prompt("update Existing toDo", task);
 
     await axios.put(
-        "http://localhost:3000/updateToDo",
+        "https://todo-backend-vxez.onrender.com/updateToDo",
         {id : id, task : newTask},
         {headers : {token : localStorage.getItem("token")}}
     );
@@ -196,7 +196,7 @@ async function updateToDo(task, id){
 async function toggleToDO(id, isCompleted){
 
     await axios.put(
-        "http://localhost:3000/updateToDo",
+        "https://todo-backend-vxez.onrender.com/updateToDo",
         {id:id, completed : isCompleted},
         {headers : {token : localStorage.getItem("token")}}
     )
@@ -207,7 +207,7 @@ async function toggleToDO(id, isCompleted){
 async function deleteToDo(id){
 
     await axios.delete(
-        "http://localhost:3000/deleteToDo",
+        "https://todo-backend-vxez.onrender.com/deleteToDo",
         {
             headers : {token : localStorage.getItem("token")},
             data : {id : id}
